@@ -1,0 +1,4 @@
+If a user wanted to test the functionality of this program for either creating a solution or determining validity of a puzzle they could do the following:
+Input the puzzle in the appropriate format (ie  using a lists with sublists for each row with empty spaces as -1. So for example one sublist(or row) should look like [[9, 4, -1, -1, 8, 5, -1, -1, 1] with nine total sublists)
+if the puzzle is invalid and the program return false than it is functioning correctly and vice versa for valid. 
+If the puzzle is correctly determined as valid and the solution makes sense following the syntax of a sudoku puzzle than it works and if not it doesn't
