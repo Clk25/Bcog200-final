@@ -70,13 +70,26 @@ def solve_sudoku(puzzle):
     return False  # Trigger backtracking
 
 def display_solution(puzzle):
-    # Display the solution on the grid
+    """
+    Updates the GUI to display the solved Sudoku puzzle.
+    Clears each entry widget and inserts the corresponding solution value.
+    
+    Args:
+        puzzle (list of list of int): The 9x9 array representing the solved Sudoku puzzle.
+    """
     for row in range(9):
         for col in range(9):
-            grid_entries[row][col].delete(0, tk.END)
-            grid_entries[row][col].insert(0, puzzle[row][col])
+            grid_entries[row][col].delete(0, tk.END)  # Clear the current entry
+            grid_entries[row][col].insert(0, puzzle[row][col])  # Insert the solution number
 
 def parse_grid():
+    """
+    Converts the values entered into the Sudoku grid by the user into a list of lists format
+    suitable for processing. Checks for valid integer inputs between 1 and 9, or empty cells.
+
+    Returns:
+        list of list of int | None: The parsed puzzle as a 2D list or None if an error occurs due to invalid input.
+    """
     puzzle = []
     for row in range(9):
         row_vals = []
@@ -85,18 +98,21 @@ def parse_grid():
             if val.isdigit() and 1 <= int(val) <= 9:
                 row_vals.append(int(val))
             elif val == "":
-                row_vals.append(-1)
+                row_vals.append(-1)  # Represent empty cells with -1
             else:
-                # Handle invalid input
                 messagebox.showinfo("Input Error", "Invalid input detected. Please enter only numbers from 1 to 9.")
-                return None  # Return None to indicate an error in input
+                return None  # Return None to halt further processing due to input error
         puzzle.append(row_vals)
     return puzzle
 
 def solve():
+    """
+    Handles the process of solving the Sudoku puzzle. It checks the validity of the puzzle, 
+    attempts to solve it if valid, and updates the grid or shows an error message.
+    """
     puzzle = parse_grid()
     if puzzle is None:
-        return  # Exit the function if the input was invalid
+        return  # Stop execution if the input is invalid
 
     if not puzzle_validity(puzzle):
         messagebox.showinfo("Sudoku Solver", "Invalid puzzle configuration detected. Please check the puzzle and try again.")
@@ -111,6 +127,13 @@ def solve():
         messagebox.showerror("Error", "An error occurred during solving: " + str(e))
 
 def create_grid(app):
+    """
+    Constructs the Sudoku grid layout using Tkinter Entry widgets, organized into 3x3 blocks
+    for a standard Sudoku layout.
+    
+    Args:
+        app (tk.Tk): The main application window object.
+    """
     global grid_entries
     grid_entries = []
     for block_row in range(3):
