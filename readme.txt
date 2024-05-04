@@ -15,7 +15,9 @@ Starting the Application: Run the script as outlined above. Initially, an instru
 Inputting the Puzzle: After closing the instructions window by clicking "Ok", the main Sudoku grid will appear. Enter numbers (1-9) into the grid cells for known values, and leave cells blank for unknowns.
 Solving the Puzzle: Click the "Solve" button below the grid to attempt to solve the puzzle. The solution will appear in the grid if solvable.
 Handling Errors and Invalid Inputs: If the puzzle is unsolvable or invalid inputs are detected, a message box will provide the appropriate feedback.
-Functions
+
+Functions:
+
 puzzle_validity(puzzle)
 Checks if the provided puzzle configuration is valid (no duplicates in rows, columns, or 3x3 subgrids). Returns True if valid, otherwise False.
 
