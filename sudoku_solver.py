@@ -107,7 +107,7 @@ def solve():
 
     try:
         # Attempt to solve the puzzle.
-        if solve_sudoku(puzzle):
+        if solver(puzzle):
             # If the puzzle is successfully solved, display the solution in the grid.
             display_solution(puzzle)
         else:
