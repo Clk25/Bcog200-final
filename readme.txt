@@ -21,13 +21,13 @@ Functions:
 puzzle_validity(puzzle)
 Checks if the provided puzzle configuration is valid (no duplicates in rows, columns, or 3x3 subgrids). Returns True if valid, otherwise False.
 
-next_empty(puzzle)
+next_blank(puzzle)
 Finds the next empty cell in the puzzle grid. Returns a tuple (row, col) or (None, None) if no empty cells are found.
 
-valid_guess(puzzle, guess, row, col)
+valid_move(puzzle, guess, row, col)
 Validates whether placing the guess (number from 1 to 9) at the specified row and col is valid according to Sudoku rules.
 
-solve_sudoku(puzzle)
+solver(puzzle)
 Attempts to solve the Sudoku puzzle using a backtracking approach. Returns True if the puzzle is solved, otherwise False.
 
 display_solution(puzzle)
@@ -45,7 +45,7 @@ Sets up the GUI for inputting the Sudoku puzzle.
 show_main_window()
 Initializes and shows the main application window after closing the instructions.
 
-instructions()
+show_instructions()
 Displays the initial instructions window with guidelines on how to use the application.
 
 Example Use Cases
