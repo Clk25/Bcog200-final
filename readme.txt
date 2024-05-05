@@ -12,6 +12,7 @@ To run Sudoku Solver, you need Python installed on your system along with the tk
 
 Usage Instructions
 Starting the Application: Run the script as outlined above. Initially, an instructions window will appear explaining how to use the application.
+NOTE: On certain systems the program will not be executed by merely typing in the script name in the command prompt when in the correct directory, in this case simply input " .\sudoku_solver.py" and the script should run.
 Inputting the Puzzle: After closing the instructions window by clicking "Ok", the main Sudoku grid will appear. Enter numbers (1-9) into the grid cells for known values, and leave cells blank for unknowns.
 Solving the Puzzle: Click the "Solve" button below the grid to attempt to solve the puzzle. The solution will appear in the grid if solvable.
 Handling Errors and Invalid Inputs: If the puzzle is unsolvable or invalid inputs are detected, a message box will provide the appropriate feedback.
