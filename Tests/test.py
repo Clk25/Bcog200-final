@@ -5,7 +5,7 @@ import os
 # Add the directory containing sudoku_solver.py to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sudoku_solver import puzzle_validity, find_next_empty, valid_move
+from sudoku_solver import puzzle_validity, next_blank, valid_move
 
 def test_puzzle_validity():
     # Test a valid and an invalid Sudoku configuration
@@ -36,7 +36,7 @@ def test_puzzle_validity():
     print("Validity of valid puzzle:", valid_result)  # Should print True
     print("Validity of invalid puzzle:", invalid_result)  # Should print False
 
-def test_find_next_empty():
+def test_next_blank():
     # Test finding the next empty cell
     puzzle_with_empty = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
@@ -49,7 +49,7 @@ def test_find_next_empty():
         [2, 8, 7, 4, 1, 9, 6, 3, 5],
         [-1, 4, 5, 2, 8, 6, 1, 7, 9]  # Last row, first cell is empty
     ]
-    next_empty = find_next_empty(puzzle_with_empty)
+    next_empty = next_blank(puzzle_with_empty)
     print("Next empty cell:", next_empty)  # Should print (8, 0)
 
 def test_valid_move():
@@ -70,7 +70,7 @@ def test_valid_move():
 
 def main():
     test_puzzle_validity()
-    test_find_next_empty()
+    test_next_blank()
     test_valid_move()
 
 if __name__ == "__main__":
